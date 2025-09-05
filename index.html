@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Student portfolio</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Student Portfolio</title>
+
+  <style>
+
+    /* ====== Global Styles ====== */
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+      box-sizing: border-box;
+
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+
+    body {
+
+      line-height: 1.6;
+
+      background: #f4f6f9;
+
+      color: #333;
+
+    }
+
+    a {
+
+      text-decoration: none;
+
+      color: inherit;
+
+    }
+
+    /* ====== Navbar ====== */
+
+    nav {
+
+      background: #2c3e50;
+
+      color: #fff;
+
+      padding: 1rem;
+
+      position: sticky;
+
+      top: 0;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      z-index: 1000;
+
+    }
+
+    nav h1 {
+
+      font-size: 1.5rem;
+
+    }
+
+    nav ul {
+
+      list-style: none;
+
+      display: flex;
+
+    }
+
+    nav ul li {
+
+      margin: 0 15px;
+
+    }
+
+    nav ul li a:hover {
+
+      color: #1abc9c;
+
+    }
+
+    /* ====== Hero Section ====== */
+
+    header {
+
+      background: #1abc9c;
+
+      color: #fff;
+
+      padding: 3rem 1rem;
+
+      text-align: center;
+
+    }
+
+    header h2 {
+
+      font-size: 2.5rem;
+
+    }
+
+    header p {
+
+      margin: 1rem 0;
+
+      font-size: 1.1rem;
+
+    }
+
+    .btn {
+
+      background: #fff;
+
+      color: #1abc9c;
+
+      padding: 10px 20px;
+
+      border-radius: 20px;
+
+      font-weight: bold;
+
+      transition: 0.3s;
+
+    }
+
+    .btn:hover {
+
+      background: #16a085;
+
+      color: #fff;
+
+    }
+
+    /* ====== Sections ====== */
+
+    section {
+
+      padding: 3rem 1rem;
+
+      max-width: 1000px;
+
+      margin: auto;
+
+    }
+
+    h2.section-title {
+
+      text-align: center;
+
+      margin-bottom: 2rem;
+
+      font-size: 2rem;
+
+      color: #2c3e50;
+
+    }
+
+    /* About */
+
+    .about p {
+
+      text-align: center;
+
+      font-size: 1.1rem;
+
+      max-width: 700px;
+
+      margin: auto;
+
+    }
+
+    /* Skills */
+
+    .skills-list {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+
+      gap: 1rem;
+
+      text-align: center;
+
+    }
+
+    .skill {
+
+      background: #fff;
+
+      padding: 1rem;
+
+      border-radius: 10px;
+
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+      transition: transform 0.3s;
+
+    }
+
+    .skill:hover {
+
+      transform: translateY(-5px);
+
+    }
+
+    /* Projects */
+
+    .projects {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+      gap: 1.5rem;
+
+    }
+
+    .project {
+
+      background: #fff;
+
+      border-radius: 10px;
+
+      overflow: hidden;
+
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+      transition: 0.3s;
+
+    }
+
+    .project img {
+
+      width: 100%;
+
+      height: 160px;
+
+      object-fit: cover;
+
+    }
+
+    .project h3 {
+
+      padding: 1rem;
+
+      font-size: 1.2rem;
+
+    }
+
+    .project:hover {
+
+      transform: scale(1.05);
+
+    }
+
+    /* Contact */
+
+    .contact form {
+
+      display: grid;
+
+      gap: 1rem;
+
+      max-width: 500px;
+
+      margin: auto;
+
+    }
+
+    .contact input, 
+
+    .contact textarea {
+
+      padding: 10px;
+
+      border: 1px solid #ccc;
+
+      border-radius: 5px;
+
+      font-size: 1rem;
+
+    }
+
+    .contact button {
+
+      background: #1abc9c;
+
+      color: #fff;
+
+      padding: 10px;
+
+      border: none;
+
+      border-radius: 5px;
+
+      font-size: 1rem;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+
+    }
+
+    .contact button:hover {
+
+      background: #16a085;
+
+    }
+
+    /* Footer */
+
+    footer {
+
+      background: #2c3e50;
+
+      color: #fff;
+
+      text-align: center;
+
+      padding: 1rem;
+
+      margin-top: 2rem;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ====== Navbar ====== -->
+
+  <nav>
+
+    <h1>My Portfolio</h1>
+
+    <ul>
+
+      <li><a href="#about">About</a></li>
+
+      <li><a href="#skills">Skills</a></li>
+
+      <li><a href="#projects">Projects</a></li>
+
+      <li><a href="#contact">Contact</a></li>
+
+    </ul>
+
+  </nav>
+
+  <!-- ====== Hero Section ====== -->
+
+  <header>
+
+    <h2>Hello, I'm a Student 👩‍🎓</h2>
+
+    <p>Aspiring Web Developer | Learner | Creator</p>
+
+    <a href="#projects" class="btn">See My Work</a>
+
+  </header>
+
+  <!-- ====== About Section ====== -->
+
+  <section id="about" class="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <p>
+
+      I am a passionate student learning web development and programming. 
+
+      I love building websites, exploring new technologies, and creating projects that solve problems.
+
+    </p>
+
+  </section>
+
+  <!-- ====== Skills Section ====== -->
+
+  <section id="skills">
+
+    <h2 class="section-title">My Skills</h2>
+
+    <div class="skills-list">
+
+      <div class="skill">HTML</div>
+
+      <div class="skill">CSS</div>
+
+      <div class="skill">JavaScript</div>
+
+      <div class="skill">Python</div>
+
+      <div class="skill">C++</div>
+
+      <div class="skill">React</div>
+
+    </div>
+
+  </section>
+
+  <!-- ====== Projects Section ====== -->
+
+  <section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects">
+
+      <div class="project">
+
+        <img src="https://via.placeholder.com/400x200" alt="Project 1">
+
+        <h3>Project 1</h3>
+
+      </div>
+
+      <div class="project">
+
+        <img src="https://via.placeholder.com/400x200" alt="Project 2">
+
+        <h3>Project 2</h3>
+
+      </div>
+
+      <div class="project">
+
+        <img src="https://via.placeholder.com/400x200" alt="Project 3">
+
+        <h3>Project 3</h3>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ====== Contact Section ====== -->
+
+  <section id="contact" class="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <form id="contactForm">
+
+      <input type="text" placeholder="Your Name" required>
+
+      <input type="email" placeholder="Your Email" required>
+
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Send</button>
+
+    </form>
+
+  </section>
+
+  <!-- ====== Footer ====== -->
+
+  <footer>
+
+    <p>© 2025 Student Portfolio | Made with ❤️</p>
+
+  </footer>
+
+  <!-- ====== JavaScript ====== -->
+
+  <script>
+
+    // Contact form submission
+
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+
+      e.preventDefault();
+
+      alert("Thank you for contacting me! I will get back to you soon.");
+
+      this.reset();
+
+    });
+
+  </script>
+
+</body>
+
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
